@@ -1,0 +1,15 @@
+{
+  "name": "coding_kata",
+  "version": "0.0.0",
+  "description": "Skeleton directory with mocha to start kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --watch --compilers js:babel-register"
+  },
+  "author": "ryan tan",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-register": "^6.6.5",
+    "expect": "^1.14.0"
+  }
+}
