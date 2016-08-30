@@ -7,22 +7,24 @@ describe('Converter', () => {
 
   describe('#convertToString', () => {
     it('should convert ones and tens', () => {
-      [{ 'test': 1, 'expected': 'one' },
-      { 'test': 10, 'expected': 'ten' },
-      { 'test': 12, 'expected': 'twelve' },
-      { 'test': 35, 'expected': 'thirty five' },
-      { 'test': 88, 'expected': 'eighty eight' },
+      [{ 'test': 1, 'expected': 'One' },
+      { 'test': 10, 'expected': 'Ten' },
+      { 'test': 12, 'expected': 'Twelve' },
+      { 'test': 40, 'expected': 'Forty' },
+      { 'test': 70, 'expected': 'Seventy' },
+      { 'test': 35, 'expected': 'ThirtyFive' },
+      { 'test': 88, 'expected': 'EightyEight' },
+      { 'test': 99, 'expected': 'NinetyNine' }
       ].forEach(v => {
         expect(converter.convertToString(v.test)).toBe(v.expected);
       });
     });
 
-    it('should convert hundreds and thousands', () => {
-      [{ 'test': 99, 'expected': 'ninety nine' },
-      { 'test': 303, 'expected': 'three hundred and three' },
-      { 'test': 789, 'expected': 'seven hundred eighty nine' },
-      { 'test': 1026, 'expected': 'one thousand and twenty six' },
-      { 'test': 3621, 'expected': 'three thousand six hundred twenty one' },
+    it('should convert hundreds', () => {
+      [{ 'test': 250, 'expected': 'TwoHundredFifty' },
+      { 'test': 303, 'expected': 'ThreeHundredThree' },
+      { 'test': 764, 'expected': 'SevenHundredSixtyFour' },
+      { 'test': 999, 'expected': 'NineHundredNinetyNine' }
       ].forEach(v => {
         expect(converter.convertToString(v.test)).toBe(v.expected);
       });
