@@ -4,10 +4,10 @@ import mergeIntervals from '../fut.js';
 
 describe ('MergeIntervals', () => {
   it('should merge partial intervals', ()=> {
-    expect(mergeIntervals([[1,3],[2,4],[5,8]])).toBe([[1,4],[5,8]]);
+    expect(mergeIntervals([[1,3],[2,4],[5,8]])).toEqual([[1,4],[5,8]]);
   });
 
-  it('should not be false', ()=> {
-    expect(true).toNotBe(false);
+  it('should merge proper subsets', ()=> {
+    expect(mergeIntervals([[1,3],[6,7],[5,8]])).toEqual([[1,3],[5,8]]);
   });
 });

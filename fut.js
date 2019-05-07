@@ -1,4 +1,4 @@
-export function mergeIntervals(intervals) {
+export default function mergeIntervals(intervals) {
   let mergedIntervals = [];
   let tracking = {};
 
@@ -10,9 +10,12 @@ export function mergeIntervals(intervals) {
     }
 
     let merged = false;
-    for (const m_value of mergedIntervals) {
-      if (value[0] > m_value[0] && value[1] > m_value[1]) {
+    for (const [index, m_value] of mergedIntervals.entries()) {
+      if (value[0] > m_value[0] && value[0] < m_value[1] && value[1] > m_value[1]) {
         m_value[1] = value[1];
+        merged = true;
+      } else if (value[0] < m_value[0] && value[1] > m_value[1]) {
+        mergedIntervals[index] = value;
         merged = true;
       }
     }
