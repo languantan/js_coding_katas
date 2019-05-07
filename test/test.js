@@ -1,13 +1,13 @@
 //using mjackson's expect library
 import expect from 'expect';
-// import /*somethin*/ from '../fut.js';
+import Negate from '../fut.js';
 
-describe ('True', () => {
-  it('should be true', ()=> {
-    expect(true).toBe(true);
+describe ('Negate', () => {
+  it('should change the truth', ()=> {
+    expect(Negate(true)).toBe(false);
   });
 
-  it('should not be false', ()=> {
-    expect(true).toNotBe(false);
+  it('should not retain truth', ()=> {
+    expect(Negate(true)).toNotBe(true);
   });
 });
