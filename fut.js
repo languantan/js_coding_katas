@@ -1,6 +1,5 @@
 export default function mergeIntervals(intervals) {
-  let mergedIntervals = [];
-  let tracking = {};
+  const mergedIntervals = [];
 
   for (const value of intervals) {
     if (mergedIntervals.length === 0){
