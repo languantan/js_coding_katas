@@ -1,10 +1,10 @@
 //using mjackson's expect library
 import expect from 'expect';
-// import /*somethin*/ from '../fut.js';
+import mergeIntervals from '../fut.js';
 
-describe ('True', () => {
-  it('should be true', ()=> {
-    expect(true).toBe(true);
+describe ('MergeIntervals', () => {
+  it('should merge partial intervals', ()=> {
+    expect(mergeIntervals([[1,3],[2,4],[5,8]])).toBe([[1,4],[5,8]]);
   });
 
   it('should not be false', ()=> {

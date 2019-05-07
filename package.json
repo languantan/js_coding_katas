@@ -4,7 +4,7 @@
   "description": "Skeleton directory with mocha to start kata",
   "main": "index.js",
   "scripts": {
-    "test": "jshint . && nyc mocha --compilers js:babel-register",
+    "test": "nyc mocha --compilers js:babel-register",
     "reset": "git reset --hard"
   },
   "author": "ryan tan",
