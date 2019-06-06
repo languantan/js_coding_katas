@@ -1,13 +1,15 @@
 //using mjackson's expect library
 import expect from 'expect';
-import Negate from '../fut.js';
+import IsRotation from '../fut.js';
 
-describe ('Negate', () => {
-  it('should change the truth', ()=> {
-    expect(Negate(true)).toBe(false);
+describe('IsRotation', () => {
+  it('should check if strings are rotation', () => {
+    expect(IsRotation('abcde', 'cdeab')).toBe(true);
   });
 
-  it('should not retain truth', ()=> {
-    expect(Negate(true)).toNotBe(true);
+  it('should check if strings are not rotation', () => {
+    expect(IsRotation('abcde', 'caedb')).toBe(false);
   });
 });
+
+
